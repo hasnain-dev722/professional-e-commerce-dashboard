@@ -1,0 +1,11 @@
+/* Sidebar hover items color smooth blending */
+.btn-paper-sidebar:hover {
+  color: #ffffff !important;
+  opacity: 1 !important;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Base custom resets if any needed */
+body {
+  -webkit-font-smoothing: antialiased;
+}

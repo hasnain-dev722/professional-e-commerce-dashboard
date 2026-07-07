@@ -1,11 +1,279 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
     <title>E-COMMERCE DASHBOARD</title>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body>
+    <!-- Main Paper Dashboard Wrapper -->
+    <div
+      class="d-flex"
+      id="wrapper"
+      style="
+        background-color: #f4f3ef;
+        min-height: 100vh;
+        font-family: &quot;Montserrat&quot;, sans-serif;
+      "
+    >
+      <!-- SIDEBAR (Paper Dark Soft Grey) -->
+      <div
+        id="sidebar-wrapper"
+        class="text-white"
+        style="width: 260px; background-color: #212120; min-height: 100vh"
+      >
+        <!-- Logo Section -->
+        <div
+          class="sidebar-heading text-center py-4 fs-6 fw-bold border-bottom border-secondary text-white-50"
+          style="letter-spacing: 1px"
+        >
+          <i class="fab fa-angular me-2 text-danger fs-5"></i>CREATOR HASNAIN
+        </div>
+
+        <!-- User Profile Minimal Info -->
+        <div
+          class="px-3 py-3 border-bottom border-secondary d-flex align-items-center"
+        >
+          <div
+            class="bg-secondary rounded-circle text-center d-flex align-items-center justify-content-center me-3"
+            style="width: 40px; height: 40px"
+          >
+            <i class="fas fa-user text-white"></i>
+          </div>
+          <div>
+            <span class="fs-6 fw-medium text-white-50 d-block">Chet Faker</span>
+          </div>
+        </div>
+
+        <!-- Navigation Links -->
+        <div class="list-group list-group-flush px-3 my-3">
+          <a
+            href="#"
+            class="list-group-item list-group-item-action bg-transparent text-danger py-3 mb-1 fw-bold border-0"
+            style="font-size: 0.85rem; letter-spacing: 1px"
+          >
+            <i class="fas fa-layer-group me-3 text-danger fs-5"></i> DASHBOARD
+          </a>
+          <a
+            href="#"
+            class="list-group-item list-group-item-action bg-transparent text-white-50 py-3 mb-1 fw-bold border-0 btn-paper-sidebar"
+            style="font-size: 0.85rem; letter-spacing: 1px"
+          >
+            <i class="fas fa-cube me-3 fs-5"></i> COMPONENTS
+            <i class="fas fa-caret-down float-end mt-1 small"></i>
+          </a>
+          <a
+            href="#"
+            class="list-group-item list-group-item-action bg-transparent text-white-50 py-3 mb-1 fw-bold border-0 btn-paper-sidebar"
+            style="font-size: 0.85rem; letter-spacing: 1px"
+          >
+            <i class="fas fa-wand-magic-stroke me-3 fs-5"></i> FORMS
+          </a>
+          <a
+            href="#"
+            class="list-group-item list-group-item-action bg-transparent text-white-50 py-3 mb-1 fw-bold border-0 btn-paper-sidebar"
+            style="font-size: 0.85rem; letter-spacing: 1px"
+          >
+            <i class="fas fa-table-list me-3 fs-5"></i> TABLES
+          </a>
+          <a
+            href="#"
+            class="list-group-item list-group-item-action bg-transparent text-white-50 py-3 mb-1 fw-bold border-0 btn-paper-sidebar"
+            style="font-size: 0.85rem; letter-spacing: 1px"
+          >
+            <i class="fas fa-map me-3 fs-5"></i> MAPS
+          </a>
+          <a
+            href="#"
+            class="list-group-item list-group-item-action bg-transparent text-white-50 py-3 mb-1 fw-bold border-0 btn-paper-sidebar"
+            style="font-size: 0.85rem; letter-spacing: 1px"
+          >
+            <i class="fas fa-chart-bar me-3 fs-5"></i> WIDGETS
+          </a>
+          <a
+            href="#"
+            class="list-group-item list-group-item-action bg-transparent text-white-50 py-3 mb-1 fw-bold border-0 btn-paper-sidebar"
+            style="font-size: 0.85rem; letter-spacing: 1px"
+          >
+            <i class="fas fa-chart-line me-3 fs-5"></i> CHARTS
+          </a>
+        </div>
+      </div>
+
+      <!-- PAGE CONTENT WRAPPER -->
+      <div id="page-content-wrapper" class="w-100 px-4">
+        <!-- TOP NAVBAR (Transparent & Minimal) -->
+        <nav
+          class="navbar navbar-expand-lg navbar-light bg-transparent py-3 mb-4"
+        >
+          <div class="container-fluid p-0">
+            <div class="d-flex align-items-center">
+              <i
+                class="fas fa-align-left text-secondary fs-5 me-3"
+                id="menu-toggle"
+                style="cursor: pointer"
+              ></i>
+              <h2
+                class="fs-4 m-0 fw-bold text-dark"
+                style="color: #66615b !important"
+              >
+                Dashboard
+              </h2>
+            </div>
+
+            <!-- Navbar Right Section -->
+            <div
+              class="d-flex align-items-center bg-white rounded-pill shadow-sm px-3 py-1"
+              style="max-width: 300px"
+            >
+              <input
+                type="text"
+                class="form-control border-0 bg-transparent p-0 shadow-none small"
+                placeholder="Search..."
+              />
+              <span class="text-secondary ms-2" style="cursor: pointer"
+                ><i class="fas fa-magnifying-glass"></i
+              ></span>
+            </div>
+          </div>
+        </nav>
+
+        <!-- MAIN CONTENT (4 Small Cards on Top like Pic) -->
+        <div class="container-fluid p-0">
+          <div class="row mb-4">
+            <!-- Card 1: Capacity -->
+            <div class="col-xl-3 col-sm-6 mb-3">
+              <div
+                class="card border-0 shadow-sm rounded-3"
+                style="background-color: #fff; color: #66615b"
+              >
+                <div class="card-body py-3 px-4">
+                  <div class="row align-items-center">
+                    <div class="col-3 text-warning text-center">
+                      <i class="fas fa-globe fs-2"></i>
+                    </div>
+                    <div class="col-9 text-end">
+                      <p class="card-category text-muted m-0 small">Capacity</p>
+                      <h4 class="card-title fw-bold m-0 fs-5">150GB</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 2: Revenue -->
+            <div class="col-xl-3 col-sm-6 mb-3">
+              <div
+                class="card border-0 shadow-sm rounded-3"
+                style="background-color: #fff; color: #66615b"
+              >
+                <div class="card-body py-3 px-4">
+                  <div class="row align-items-center">
+                    <div class="col-3 text-success text-center">
+                      <i class="fas fa-wallet fs-2"></i>
+                    </div>
+                    <div class="col-9 text-end">
+                      <p class="card-category text-muted m-0 small">Revenue</p>
+                      <h4 class="card-title fw-bold m-0 fs-5">$1,345</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 3: Errors -->
+            <div class="col-xl-3 col-sm-6 mb-3">
+              <div
+                class="card border-0 shadow-sm rounded-3"
+                style="background-color: #fff; color: #66615b"
+              >
+                <div class="card-body py-3 px-4">
+                  <div class="row align-items-center">
+                    <div class="col-3 text-danger text-center">
+                      <i class="fas fa-circle-exclamation fs-2"></i>
+                    </div>
+                    <div class="col-9 text-end">
+                      <p class="card-category text-muted m-0 small">Errors</p>
+                      <h4 class="card-title fw-bold m-0 fs-5">23</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 4: Followers -->
+            <div class="col-xl-3 col-sm-6 mb-3">
+              <div
+                class="card border-0 shadow-sm rounded-3"
+                style="background-color: #fff; color: #66615b"
+              >
+                <div class="card-body py-3 px-4">
+                  <div class="row align-items-center">
+                    <div class="col-3 text-info text-center">
+                      <i class="fas fa-heart fs-2"></i>
+                    </div>
+                    <div class="col-9 text-end">
+                      <p class="card-category text-muted m-0 small">
+                        Followers
+                      </p>
+                      <h4 class="card-title fw-bold m-0 fs-5">+45K</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Graph Area (Big Floating Cards) -->
+          <div class="row">
+            <div class="col-md-12">
+              <div
+                class="card border-0 shadow-sm rounded-3 p-4 mb-4"
+                style="background-color: #fff"
+              >
+                <div
+                  class="d-flex justify-content-between align-items-center border-bottom pb-3 mb-4"
+                >
+                  <div>
+                    <h5 class="m-0 fw-bold" style="color: #66615b">$34,657</h5>
+                    <p class="text-muted m-0 small">
+                      TOTAL EARNINGS IN LAST QUARTER
+                    </p>
+                  </div>
+                  <span
+                    class="badge bg-success-subtle text-success border border-success-subtle px-3 py-2 rounded-pill fw-bold"
+                    >Active</span
+                  >
+                </div>
+                <!-- Graphic Placeholder -->
+                <div
+                  class="d-flex align-items-center justify-content-center bg-light rounded-3"
+                  style="height: 300px; border: 2px dashed #e1e0da"
+                >
+                  <div class="text-center text-muted">
+                    <i class="fas fa-chart-line fa-3x mb-3 text-danger"></i>
+                    <p class="m-0 fw-medium">
+                      Global Sales Performance Graphs Go Here
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
 </html>
