@@ -7,5 +7,7 @@ sidebarlinks.forEach((link) => {
       item.classList.remove("active");
     });
     this.classList.add("active");
+    const target = this.getAttribute("data-target");
+    allpages.forEach((page) => {
   });
 });
