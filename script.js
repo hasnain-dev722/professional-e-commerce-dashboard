@@ -7,7 +7,13 @@ sidebarlinks.forEach((link) => {
       item.classList.remove("active");
     });
     this.classList.add("active");
-    const target = this.getAttribute("data-target");
+    const targetname = this.getAttribute("data-target");
     allpages.forEach((page) => {
+      if (page.id === targetname) {
+        page.classList.remove("d-none");
+      } else {
+        page.classList.add("d-none");
+      }
+    });
   });
 });
