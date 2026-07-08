@@ -6,6 +6,6 @@ sidebarlinks.forEach((link) => {
     sidebarlinks.forEach((item) => {
       item.classList.remove("active");
     });
-    link.classList.add("active");
+    this.classList.add("active");
   });
 });
