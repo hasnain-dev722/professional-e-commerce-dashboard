@@ -1,6 +1,6 @@
 /* Sidebar hover items color smooth blending */
 .btn-paper-sidebar:hover {
-  color: #ffffff !important;
+  color: #fd7979 !important;
   opacity: 1 !important;
   transition: all 0.2s ease-in-out;
 }
@@ -15,6 +15,7 @@ body {
   border-color: white !important;
 
 }
-/* working */
-/* learn about bootstrap css */
-/* learn about bootstrap flexbox */
+a.list-group-item-action{
+color: #000000 !important;
+font-weight: 600 !important;
+}
