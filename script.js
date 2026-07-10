@@ -17,3 +17,18 @@ sidebarlinks.forEach((link) => {
     });
   });
 });
+const salesoption = {
+series: [{
+  name: 'sales',
+  data: [31, 40, 28, 51, 42, 109, 100]
+}],
+charts: {
+  type:'area',
+  height:350,
+  tolbar: {show: false}
+},
+colors: ['#4e73df'],
+xaxis: {
+  categoreis: ['mon, tue, wed, thu, fri, sat, sun']
+}
+};
