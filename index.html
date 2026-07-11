@@ -224,8 +224,16 @@
           <div class="col-md-8 mb-4">
             <div class="card shadow-sm border-0 h-100">
               <div class="card-body">
-                <h5 class="card-title fw-bold">Sales Overview</h5>
-                <p class="text-muted small">Real-Time Sales Performance</p>
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                <h5 class="card-title fw-bold mb-0">Sales Overview</h5>
+                <p class="text-muted small mb-0">Real-Time Sales Performance</p>
+                </div>
+                <div class="btn-group" role="group">
+                  <button type="button" class="btn btn-sm btn-outline-primary active" id="btn-weekly">Weekly</button>
+                  <button type="button" class="btn btn-sm btn-outline-primary" id="btn-monthly">Monthly</button>
+                  <button type="button" class="btn btn-sm btn-outline-primary" id="btn-yearly">Yearly</button>
+                </div>
+
                 <div id="MainSalesChart" style="min-height: 300px"></div>
               </div>
             </div>

@@ -68,5 +68,12 @@ const salesChart = new ApexCharts(
 );
 salesChart.render();
 
+class ChartDataManager {
+  constructor(chartInstance){
+  this.chart = chartInstance;
+  }
 
-// going
+async fetchsalesdata(filtertype){
+
+}
+}
