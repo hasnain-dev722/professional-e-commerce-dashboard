@@ -131,17 +131,17 @@ class ChartDataManager {
 }
 const datamanager = new ChartDataManager(salesChart);
 const filterbuttons = {
-  weekly: document.getElementById("#btn-weekly"),
-  monthly: document.getElementById("#btn-monthly"),
-  yearly: document.getElementById("#btn-yearly"),
+  weekly: document.getElementById("btn-weekly"),
+  monthly: document.getElementById("btn-monthly"),
+  yearly: document.getElementById("btn-yearly"),
 };
 Object.keys(filterbuttons).forEach((type) => {
   if (filterbuttons[type]) {
     filterbuttons[type].addEventListener("click", function () {
-      Object.values(filterbuttons).forEach((btn) =>
-        btn.classList.remove("active"),
-      );
-      this.classList.add("active");
+      Object.values(filterbuttons).forEach((btn) => {
+        if (btn) btn.classList.remove("active");
+      });
+      filterbuttons[type].classList.add("active");
       datamanager.fetchsalesdata(type);
     });
   }
