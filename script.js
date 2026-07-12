@@ -76,35 +76,33 @@ class ChartDataManager {
   }
   async fetchsalesdata(filtertype) {
     try {
-      const response = await fetch(
-        "https://jsonplaceholder.typeicode.com/posts",
-      );
-      if (!Response.ok) throw new Error("network reponse is not good");
-      const livenumbers = await response.json();
-      for (let i = 0; i < 7; i++) {
-        livenumbers.push(Math.floor(Math.random() * (120 - 10 + 1)) + 10);
-      }
-
-      console.log(`live api data for ${filtertype}:`, livenumbers);
+      // API ko goli maro, local fake numbers generate karo filtertype ke mutabiq
+      let livenumbers = [];
       let newcategories = [];
+
       if (filtertype === "weekly") {
-        newcategories = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
+        livenumbers = [30, 40, 35, 50, 49, 60, 70]; // 7 days data
+        newcategories = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
       } else if (filtertype === "monthly") {
+        livenumbers = [
+          400, 450, 500, 600, 550, 700, 800, 750, 900, 850, 950, 1000,
+        ]; // 12 months data
         newcategories = [
-          "jan",
-          "feb",
-          "mar",
-          "apr",
-          "may",
-          "june",
-          "july",
-          "aug",
-          "sep",
-          "oct",
-          "nov",
-          "dec",
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun",
+          "Jul",
+          "Aug",
+          "Sep",
+          "Oct",
+          "Nov",
+          "Dec",
         ];
       } else if (filtertype === "yearly") {
+        livenumbers = [5000, 6200, 7100, 8500, 9200, 11000, 13000]; // years data
         newcategories = [
           "2020",
           "2021",
@@ -115,9 +113,14 @@ class ChartDataManager {
           "2026",
         ];
       }
+
+      console.log(`Local data loaded for ${filtertype}:`, livenumbers);
+
+      // Chart update karne ka tera purana code
       this.chart.updateOptions({
         xaxis: { categories: newcategories },
       });
+
       this.chart.updateSeries([
         {
           name: "Sales",
@@ -125,7 +128,7 @@ class ChartDataManager {
         },
       ]);
     } catch (error) {
-      console.log('"masla agya ha');
+      console.log("masla agya ha");
     }
   }
 }
