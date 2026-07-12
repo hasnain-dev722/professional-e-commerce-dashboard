@@ -19,3 +19,9 @@ a.list-group-item-action{
 color: white !important;
 font-weight: 600 !important;
 }
+.active{
+  background-color: #007bff !important;
+  color: white !important;
+  font-weight: bold;
+
+}
