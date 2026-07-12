@@ -77,10 +77,14 @@ class ChartDataManager {
   async fetchsalesdata(filtertype) {
     try {
       const response = await fetch(
-        "https://www.randomnumberapi.com/api/v1.0/random?min=10&max=120&count=7",
+        "https://jsonplaceholder.typeicode.com/posts",
       );
       if (!Response.ok) throw new Error("network reponse is not good");
       const livenumbers = await response.json();
+      for (let i = 0; i < 7; i++) {
+        livenumbers.push(Math.floor(Math.random() * (120 - 10 + 1)) + 10);
+      }
+
       console.log(`live api data for ${filtertype}:`, livenumbers);
       let newcategories = [];
       if (filtertype === "weekly") {
@@ -127,15 +131,15 @@ class ChartDataManager {
 }
 const datamanager = new ChartDataManager(salesChart);
 const filterbuttons = {
-  weekly: document.getElementById("btn-weekly"),
-  monthly: document.getElementById("btn-monthkly"),
-  yearly: document.getElementById("btn-yearly"),
+  weekly: document.getElementById("#btn-weekly"),
+  monthly: document.getElementById("#btn-monthly"),
+  yearly: document.getElementById("#btn-yearly"),
 };
 Object.keys(filterbuttons).forEach((type) => {
   if (filterbuttons[type]) {
     filterbuttons[type].addEventListener("click", function () {
       Object.values(filterbuttons).forEach((btn) =>
-        btn.classList.remove("actve"),
+        btn.classList.remove("active"),
       );
       this.classList.add("active");
       datamanager.fetchsalesdata(type);
