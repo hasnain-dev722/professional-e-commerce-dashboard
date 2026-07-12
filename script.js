@@ -70,23 +70,26 @@ const salesChart = new ApexCharts(
 );
 salesChart.render();
 
+// ==========================================
+// 1. DATA MANAGER CLASS (OOP + MOCK DATA)
+// ==========================================
 class ChartDataManager {
   constructor(chartInstance) {
     this.chart = chartInstance;
   }
+
   async fetchsalesdata(filtertype) {
     try {
-      // API ko goli maro, local fake numbers generate karo filtertype ke mutabiq
       let livenumbers = [];
       let newcategories = [];
 
       if (filtertype === "weekly") {
-        livenumbers = [30, 40, 35, 50, 49, 60, 70]; // 7 days data
+        livenumbers = [30, 40, 35, 50, 49, 60, 70];
         newcategories = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
       } else if (filtertype === "monthly") {
         livenumbers = [
           400, 450, 500, 600, 550, 700, 800, 750, 900, 850, 950, 1000,
-        ]; // 12 months data
+        ];
         newcategories = [
           "Jan",
           "Feb",
@@ -102,7 +105,7 @@ class ChartDataManager {
           "Dec",
         ];
       } else if (filtertype === "yearly") {
-        livenumbers = [5000, 6200, 7100, 8500, 9200, 11000, 13000]; // years data
+        livenumbers = [5000, 6200, 7100, 8500, 9200, 11000, 13000];
         newcategories = [
           "2020",
           "2021",
@@ -116,7 +119,7 @@ class ChartDataManager {
 
       console.log(`Local data loaded for ${filtertype}:`, livenumbers);
 
-      // Chart update karne ka tera purana code
+      // Chart update logic
       this.chart.updateOptions({
         xaxis: { categories: newcategories },
       });
@@ -128,23 +131,34 @@ class ChartDataManager {
         },
       ]);
     } catch (error) {
-      console.log("masla agya ha");
+      console.log("masla agya ha:", error);
     }
   }
 }
+
+// ==========================================
+// 2. INITIALIZATION & EVENT LISTENERS
+// ==========================================
 const datamanager = new ChartDataManager(salesChart);
+
 const filterbuttons = {
   weekly: document.getElementById("btn-weekly"),
   monthly: document.getElementById("btn-monthly"),
   yearly: document.getElementById("btn-yearly"),
 };
+
 Object.keys(filterbuttons).forEach((type) => {
   if (filterbuttons[type]) {
     filterbuttons[type].addEventListener("click", function () {
+      // 1. Remove active class from all buttons
       Object.values(filterbuttons).forEach((btn) => {
         if (btn) btn.classList.remove("active");
       });
+
+      // 2. Add active class to clicked button
       filterbuttons[type].classList.add("active");
+
+      // 3. Fetch data for this specific type
       datamanager.fetchsalesdata(type);
     });
   }
