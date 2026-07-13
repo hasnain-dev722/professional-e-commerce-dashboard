@@ -17,149 +17,138 @@ sidebarlinks.forEach((link) => {
     });
   });
 });
-const donutchart = {
-  series: [44, 28, 18, 10],
-  labels: ["Direct", "Social", "Email", "Other"],
-  chart: { type: "donut", height: 250 },
-  colors: ["#4e73df", "#1cc88a", "#36b9cc", "#f6c23e"],
-  legend: { position: "bottom" },
-};
 
-// 1. Sales Overview (Left Smooth Area Line Chart)
-const salesOverview = {
-  series: [
-    {
-      name: "Sales",
-      data: [31, 40, 28, 51, 42, 109, 100], // Exact teri image wale data points
+document.addEventListener("DOMContentLoaded", function () {
+  const salesChartOptions = {
+    chart: {
+      type: "area",
+      height: 300,
+      toolbar: { show: false },
     },
-  ],
-  chart: {
-    type: "area",
-    height: 350,
-    toolbar: { show: false },
-  },
-  stroke: {
-    curve: "smooth",
-    width: 3,
-  },
-  colors: ["#0d6efd"], // Blue color line
-  dataLabels: {
-    enabled: true, // Numbers line ke upar dikhane ke liye
-    background: { enabled: true, fillColor: "#0d6efd" },
-  },
-  xaxis: {
-    categories: ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
-    axisBorder: { show: true },
-    axisTicks: { show: true },
-  },
-  yaxis: {
-    min: 20,
-    max: 120,
-    tickAmount: 5,
-  },
-};
-const trafficChart = new ApexCharts(
-  document.querySelector("#MainSalesChart"),
-  salesOverview,
-);
-trafficChart.render();
-// Render (Donon ko tumhari HTML ke mutabiq load karna)
-const salesChart = new ApexCharts(
-  document.querySelector("#TrafficDonutChart"),
-  donutchart,
-);
-salesChart.render();
+    series: [
+      {
+        name: "Sales",
+        data: [31, 40, 28, 51, 42, 109, 100],
+      },
+    ],
+    xaxis: {
+      categories: ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
+    },
+    dataLabels: { enabled: true },
+    stroke: { curve: "smooth" },
+  };
+  const salesChartEl = document.querySelector("#MainSalesChart");
+  let salesChart;
 
-// ==========================================
-// 1. DATA MANAGER CLASS (OOP + MOCK DATA)
-// ==========================================
-class ChartDataManager {
-  constructor(chartInstance) {
-    this.chart = chartInstance;
+  if (salesChartEl) {
+    salesChart = new ApexCharts(salesChartEl, salesChartOptions);
+    salesChart.render();
+  } else {
+    console.log("Sales chart element nahi mila HTML mein!");
   }
+  const donutChartOptions = {
+    chart: {
+      type: "donut",
+      height: 300,
+    },
+    series: [44, 55, 41, 17],
+    labels: ["Direct", "Social Media", "Referral", "Organic"],
+  };
 
-  async fetchsalesdata(filtertype) {
-    try {
-      let livenumbers = [];
-      let newcategories = [];
+  const donutChartEl = document.querySelector("#TrafficDonutChart");
+  let donutChart;
 
-      if (filtertype === "weekly") {
-        livenumbers = [30, 40, 35, 50, 49, 60, 70];
-        newcategories = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
-      } else if (filtertype === "monthly") {
-        livenumbers = [
-          400, 450, 500, 600, 550, 700, 800, 750, 900, 850, 950, 1000,
-        ];
-        newcategories = [
-          "Jan",
-          "Feb",
-          "Mar",
-          "Apr",
-          "May",
-          "Jun",
-          "Jul",
-          "Aug",
-          "Sep",
-          "Oct",
-          "Nov",
-          "Dec",
-        ];
-      } else if (filtertype === "yearly") {
-        livenumbers = [5000, 6200, 7100, 8500, 9200, 11000, 13000];
-        newcategories = [
-          "2020",
-          "2021",
-          "2022",
-          "2023",
-          "2024",
-          "2025",
-          "2026",
-        ];
+  if (donutChartEl) {
+    donutChart = new ApexCharts(donutChartEl, donutChartOptions);
+    donutChart.render();
+  } else {
+    console.log("Donut chart element nahi mila HTML mein!");
+  }
+  class ChartDataManager {
+    constructor(chartInstance) {
+      this.chart = chartInstance;
+    }
+
+    async fetchsalesdata(filtertype) {
+      if (!this.chart) {
+        console.log("Chart initialized nahi hai!");
+        return;
       }
+      try {
+        let livenumbers = [];
+        let newcategories = [];
 
-      console.log(`Local data loaded for ${filtertype}:`, livenumbers);
+        if (filtertype === "weekly") {
+          livenumbers = [31, 40, 28, 51, 42, 109, 100];
+          newcategories = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
+        } else if (filtertype === "monthly") {
+          livenumbers = [
+            400, 450, 500, 600, 550, 700, 800, 750, 900, 850, 950, 1000,
+          ];
+          newcategories = [
+            "Jan",
+            "Feb",
+            "Mar",
+            "Apr",
+            "May",
+            "Jun",
+            "Jul",
+            "Aug",
+            "Sep",
+            "Oct",
+            "Nov",
+            "Dec",
+          ];
+        } else if (filtertype === "yearly") {
+          livenumbers = [5000, 6200, 7100, 8500, 9200, 11000, 13000];
+          newcategories = [
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+            "2025",
+            "2026",
+          ];
+        }
 
-      // Chart update logic
-      this.chart.updateOptions({
-        xaxis: { categories: newcategories },
-      });
-
-      this.chart.updateSeries([
-        {
-          name: "Sales",
-          data: livenumbers,
-        },
-      ]);
-    } catch (error) {
-      console.log("masla agya ha:", error);
+        console.log(`Local data loaded for ${filtertype}:`, livenumbers);
+        this.chart.updateOptions({
+          xaxis: {
+            categories: newcategories,
+          },
+          series: [
+            {
+              name: "Sales",
+              data: livenumbers,
+            },
+          ],
+        });
+      } catch (error) {
+        console.log("masla agya ha:", error);
+      }
     }
   }
-}
+  const datamanager = new ChartDataManager(salesChart);
 
-// ==========================================
-// 2. INITIALIZATION & EVENT LISTENERS
-// ==========================================
-const datamanager = new ChartDataManager(salesChart);
+  const filterbuttons = {
+    weekly: document.getElementById("btn-weekly"),
+    monthly: document.getElementById("btn-monthly"),
+    yearly: document.getElementById("btn-yearly"),
+  };
 
-const filterbuttons = {
-  weekly: document.getElementById("btn-weekly"),
-  monthly: document.getElementById("btn-monthly"),
-  yearly: document.getElementById("btn-yearly"),
-};
+  Object.keys(filterbuttons).forEach((type) => {
+    const currentBtn = filterbuttons[type];
 
-Object.keys(filterbuttons).forEach((type) => {
-  if (filterbuttons[type]) {
-    filterbuttons[type].addEventListener("click", function () {
-      // 1. Remove active class from all buttons
-      Object.values(filterbuttons).forEach((btn) => {
-        if (btn) btn.classList.remove("active");
+    if (currentBtn) {
+      currentBtn.addEventListener("click", function () {
+        Object.values(filterbuttons).forEach((btn) => {
+          if (btn) btn.classList.remove("active");
+        });
+
+        currentBtn.classList.add("active");
+        datamanager.fetchsalesdata(type);
       });
-
-      // 2. Add active class to clicked button
-      filterbuttons[type].classList.add("active");
-
-      // 3. Fetch data for this specific type
-      datamanager.fetchsalesdata(type);
-    });
-  }
+    }
+  });
 });
