@@ -22,8 +22,15 @@ document.addEventListener("DOMContentLoaded", function () {
   const salesChartOptions = {
     chart: {
       type: "area",
+      toolbar: { show: false },
+      zoom: { enabled: false },
       height: 300,
       toolbar: { show: false },
+      tooltip: { enabled: false },
+      states: {
+        hover: { filter: { type: "none" } },
+        active: { filter: { type: "none" } },
+      },
     },
     series: [
       {
@@ -50,6 +57,12 @@ document.addEventListener("DOMContentLoaded", function () {
     chart: {
       type: "donut",
       height: 300,
+      tooltip: { enabled: false },
+
+      states: {
+        hover: { filter: { type: "none" } },
+        active: { filter: { type: "none" } },
+      },
     },
     series: [44, 55, 41, 17],
     labels: ["Direct", "Social Media", "Referral", "Organic"],
