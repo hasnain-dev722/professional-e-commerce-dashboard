@@ -45,3 +45,16 @@ body.dark.card {
   background-color: #1e1e1e !important;
   color: #111111 !important;
 }
+/* Mobile view (Sirf jab screen 992px se choti ho) */
+@media (max-width: 991.98px) {
+  #sidebar-wrapper {
+    margin-left: -260px; /* Mobile par sidebar screen se baahar chala jaye gaa */
+    position: fixed;
+    z-index: 1000;
+  }
+
+  /* Jab hamburger menu dabayein toh sidebar smoothly andar aaye */
+  #wrapper.toggled #sidebar-wrapper {
+    margin-left: 0;
+  }
+}

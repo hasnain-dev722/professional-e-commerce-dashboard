@@ -152,3 +152,15 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+document.addEventListener("DOMContentLoaded", function () {
+  // Check karna ke tumhare hamburger menu button par id="menu-toggle" lagi ho
+  const menuToggle = document.getElementById("menu-toggle");
+  const wrapper = document.getElementById("wrapper");
+
+  if (menuToggle) {
+    menuToggle.addEventListener("click", function (e) {
+      e.preventDefault();
+      wrapper.classList.toggle("toggled"); // Yeh class sidebar ko slide-in karegi
+    });
+  }
+});
