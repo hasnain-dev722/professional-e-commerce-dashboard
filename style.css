@@ -90,3 +90,12 @@ body {
     width: 100% !important;
   }
 }
+#MainSalesChart,
+#TrafficDonutChart,
+#DonutChart {
+  width: 100% !important;
+}
+
+.card {
+  overflow: hidden;
+}
