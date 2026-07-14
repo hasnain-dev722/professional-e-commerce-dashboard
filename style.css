@@ -45,16 +45,61 @@ body.dark.card {
   background-color: #1e1e1e !important;
   color: #111111 !important;
 }
-/* Mobile view (Sirf jab screen 992px se choti ho) */
-@media (max-width: 991.98px) {
+/* ========================================================
+   GLOBAL CLEANUP (Taake layout hamesha saaf rahe)
+   ======================================================== */
+#wrapper {
+  display: flex !important;
+  width: 100% !important;
+}
+
+#page-content-wrapper {
+  width: 100% !important;
+  flex-grow: 1;
+}
+
+/* ========================================================
+   1. LAPTOP VIEW FIX (Jo cheezain bigar gye hain)
+   ======================================================== */
+@media (min-width: 992px) {
   #sidebar-wrapper {
-    margin-left: -260px; /* Mobile par sidebar screen se baahar chala jaye gaa */
-    position: fixed;
-    z-index: 1000;
+    width: 260px !important;
+    min-width: 260px !important;
+    display: block !important;
+  }
+}
+
+/* ========================================================
+   2. MOBILE RESPONSIVE FIX (Pure CSS Se Sidebar Toggle)
+   ======================================================== */
+@media (max-width: 991.98px) {
+  /* Main wrapper ko vertical stack karo */
+  #wrapper {
+    flex-direction: column !important;
   }
 
-  /* Jab hamburger menu dabayein toh sidebar smoothly andar aaye */
-  #wrapper.toggled #sidebar-wrapper {
-    margin-left: 0;
+  /* Sidebar ko full width karo taake mobile par bad-soorat na lage */
+  #sidebar-wrapper {
+    width: 100% !important;
+    min-width: 100% !important;
+    min-height: auto !important;
+    display: block !important;
+  }
+
+  /* Cards aur Columns ko z जबरدستی ek ke neeche ek (100%) karo */
+  .col-md-3,
+  .col-md-8,
+  .col-md-4,
+  .col-12 {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+  }
+
+  /* Horizontal scroll ka mukammal khatma */
+  html,
+  body {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
   }
 }
