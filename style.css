@@ -30,3 +30,18 @@ a.list-group-item-action {
   min-height: 300px !important;
   display: block !important;
 }
+body {
+  background-color: #ffffff;
+  color: #111111;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+}
+body.dark {
+  background-color: #121212;
+  color: #111111;
+}
+body.dark.card {
+  background-color: #1e1e1e !important;
+  color: #111111 !important;
+}
