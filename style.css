@@ -109,6 +109,13 @@ body {
   box-shadow: none !important;
   background: transparent !important;
   padding: 8px 12px !important;
-  max-width: 100%;
+  max-width: 100% !important;
   /* margin-right: 15px !important; */
+}
+.navbar.form-control {
+  max-width: 150px !important;
+}
+.navbar .d-flex {
+  width: 120%;
+  /* justify-content: space-between; */
 }
