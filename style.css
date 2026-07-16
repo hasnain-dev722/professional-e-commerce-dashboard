@@ -99,3 +99,16 @@ body {
 .card {
   overflow: hidden;
 }
+#menu-toggle {
+  margin-left: 12px;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+.form-control {
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  padding: 8px 12px !important;
+  max-width: 100%;
+  /* margin-right: 15px !important; */
+}
