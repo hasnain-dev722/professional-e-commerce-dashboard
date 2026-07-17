@@ -122,6 +122,9 @@ body {
 body.dark {
   background-color: #121212 !important;
 }
+body.dark #page-content-wrapper {
+  background-color: #121212 !important;
+}
 body.dark p,
 body.dark h1,
 body.dark h2,
@@ -131,5 +134,5 @@ body.dark div {
   color: #ffffff;
 }
 body.dark canvas {
-  filter: invert(1) hue-rotate(180deg);
+  filter: invert(1) hue-rotate(180deg) !important;
 }
