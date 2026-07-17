@@ -43,7 +43,7 @@ body.dark {
 }
 body.dark .card {
   background-color: #1e1e1e !important;
-  color: #ffffff !important;
+  /* color: #ffffff !important; */
 }
 /* BASE */
 * {
@@ -117,22 +117,49 @@ body {
 }
 .navbar .d-flex {
   width: 100%;
-  /* justify-content: space-between; */
 }
-body.dark {
-  background-color: #121212 !important;
-}
-body.dark #page-content-wrapper {
-  background-color: #121212 !important;
-}
-body.dark p,
+/* justify-content: space-between; */
+/* ===== DARK MODE OVERRIDES ===== */
+
+/* 1. Dashboard title */
+body.dark .dashboard-title,
 body.dark h1,
 body.dark h2,
-body.dark h3,
-body.dark span,
-body.dark div {
-  color: #ffffff;
+body.dark h3 {
+  color: #ffffff !important;
 }
-body.dark canvas {
-  filter: invert(1) hue-rotate(180deg) !important;
+
+/* 2. Sidebar text only — icons untouched */
+body.dark #sidebar-wrapper a,
+body.dark #sidebar-wrapper span:not(.fa):not(.fas):not(.far):not(.bi) {
+  color: #ffffff !important;
+}
+
+/* Brand icon + all icon classes stay original — explicitly protected */
+body.dark #sidebar-wrapper .fa,
+body.dark #sidebar-wrapper .fas,
+body.dark #sidebar-wrapper .far,
+body.dark #sidebar-wrapper .bi,
+body.dark #sidebar-wrapper .brand-icon {
+  color: inherit !important;
+}
+
+/* 3. Search field & form inputs — only color changes, no layout properties */
+body.dark input[type="text"],
+body.dark input[type="search"],
+body.dark .search-input,
+body.dark select,
+body.dark textarea {
+  background-color: #222222 !important;
+  color: #ffffff !important;
+  border: 1px solid #444444 !important;
+}
+
+body.dark input::placeholder {
+  color: #aaaaaa !important;
+}
+
+/* 4. Weekly/Monthly/Yearly toggle button text */
+body.dark .btn-group .btn {
+  color: #ffffff !important;
 }

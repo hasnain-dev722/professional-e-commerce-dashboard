@@ -184,7 +184,7 @@ darkbody.classList.add("dark");
 darkmodebtn.addEventListener("click", () => {
   darkbody.classList.toggle("dark");
   if (darkbody.classList.contains("dark")) {
-    localStorage.setItem("dark", "theme");
+    localStorage.setItem("theme", "dark");
   } else {
     localStorage.setItem("dark", "light");
   }
