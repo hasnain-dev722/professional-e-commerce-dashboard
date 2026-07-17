@@ -176,3 +176,16 @@ document.addEventListener("click", function (e) {
     sidebar.classList.remove("active");
   }
 });
+
+const darkmodebtn = document.getElementById("dark-mode-toggle");
+const darkbody = document.body;
+if (localStorage.getItem("theme") === "dark");
+darkbody.classList.add("dark");
+darkmodebtn.addEventListener("click", () => {
+  darkbody.classList.toggle("dark");
+  if (darkbody.classList.contains("dark")) {
+    localStorage.setItem("dark", "theme");
+  } else {
+    localStorage.setItem("dark", "light");
+  }
+});
