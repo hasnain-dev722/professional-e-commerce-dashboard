@@ -163,3 +163,34 @@ body.dark input::placeholder {
 body.dark .btn-group .btn {
   color: #ffffff !important;
 }
+body.dark #page-content-wrapper {
+  background-color: #121212 !important;
+}
+body.dark .text-muted,
+body.dark .text-secondary {
+  color: #ffffff !important;
+}
+/* body.dark .card i,
+body.dark .card svg,
+body.dark #page-content-wrapper .search-icon {
+  color: #ffffff !important;
+} */
+body.dark #page-content-wrapper .bg-white.rounded-pill {
+  background-color: #222222 !important;
+}
+body.dark #page-content-wrapper .bg-white.rounded-pill {
+  background-color: #222222 !important;
+}
+body.dark #page-content-wrapper .bg-white.rounded-pill input {
+  background-color: transparent !important;
+  color: #ffffff !important;
+}
+body.dark #page-content-wrapper .bg-white.rounded-pill input::placeholder {
+  color: #aaaaaa !important;
+}
+body.dark #page-content-wrapper .bg-white.rounded-pill .text-secondary {
+  color: #ffffff !important;
+}
+body.dark .card-title {
+  color: #ffffff !important;
+}

@@ -50,6 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
   if (salesChartEl) {
     salesChart = new ApexCharts(salesChartEl, salesChartOptions);
     salesChart.render();
+    window.salesChart = salesChart;
   } else {
     console.log("Sales chart element nahi mila HTML mein!");
   }
@@ -74,6 +75,7 @@ document.addEventListener("DOMContentLoaded", function () {
   if (donutChartEl) {
     donutChart = new ApexCharts(donutChartEl, donutChartOptions);
     donutChart.render();
+    window.donutChart = donutChart;
   } else {
     console.log("Donut chart element nahi mila HTML mein!");
   }
@@ -179,13 +181,29 @@ document.addEventListener("click", function (e) {
 
 const darkmodebtn = document.getElementById("dark-mode-toggle");
 const darkbody = document.body;
-if (localStorage.getItem("theme") === "dark");
-darkbody.classList.add("dark");
+if (localStorage.getItem("theme") === "dark") {
+  darkbody.classList.add("dark");
+  setTimeout(() => applyChartDarkMode(true), 10);
+}
 darkmodebtn.addEventListener("click", () => {
   darkbody.classList.toggle("dark");
   if (darkbody.classList.contains("dark")) {
     localStorage.setItem("theme", "dark");
   } else {
-    localStorage.setItem("dark", "light");
+    localStorage.setItem("theme", "light");
   }
+  const isDark = darkbody.classList.contains("dark");
+  applyChartDarkMode(isDark); // <-- ye line add karo yahan
 });
+function applyChartDarkMode(isDark) {
+  const theme = {
+    theme: { mode: isDark ? "dark" : "light" },
+    grid: { borderColor: isDark ? "#444444" : "#e0e0e0" },
+    xaxis: { labels: { style: { colors: isDark ? "#ffffff" : "#333333" } } },
+    yaxis: { labels: { style: { colors: isDark ? "#ffffff" : "#333333" } } },
+    legend: { labels: { colors: isDark ? "#ffffff" : "#333333" } },
+  };
+
+  if (window.salesChart) salesChart.updateOptions(theme);
+  if (window.donutChart) donutChart.updateOptions(theme);
+}
