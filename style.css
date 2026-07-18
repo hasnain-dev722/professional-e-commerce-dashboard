@@ -194,3 +194,6 @@ body.dark #page-content-wrapper .bg-white.rounded-pill .text-secondary {
 body.dark .card-title {
   color: #ffffff !important;
 }
+body.dark .fa-dollar-sign {
+  color: #ffffff !important;
+}
