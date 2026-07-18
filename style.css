@@ -197,3 +197,9 @@ body.dark .card-title {
 body.dark .fa-dollar-sign {
   color: #ffffff !important;
 }
+body.dark .bg-white.rounded-pill,
+body.dark .rounded-pill.shadow-sm {
+  box-shadow: none !important;
+  border: none !important;
+  background-color: #222222 !important;
+}
