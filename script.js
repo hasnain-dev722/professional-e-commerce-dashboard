@@ -207,3 +207,60 @@ function applyChartDarkMode(isDark) {
   if (window.salesChart) salesChart.updateOptions(theme);
   if (window.donutChart) donutChart.updateOptions(theme);
 }
+const searchInput = document.querySelector('input[placeholder="Search..."]');
+const searchResults = document.getElementById("search-results");
+
+const pages = [
+  { name: "Dashboard", target: "dashboard-page" },
+  { name: "Components", target: "components-page" },
+  { name: "Forms", target: "forms-page" },
+  { name: "Tables", target: "tables-page" },
+  { name: "Maps", target: "maps-page" },
+  { name: "Widgets", target: "widgets-page" },
+  { name: "Charts", target: "charts-page" },
+];
+
+searchInput.addEventListener("input", () => {
+  const query = searchInput.value.trim().toLowerCase();
+
+  if (query === "") {
+    searchResults.style.display = "none";
+    return;
+  }
+
+  const matches = pages.filter((page) =>
+    page.name.toLowerCase().includes(query),
+  );
+
+  if (matches.length === 0) {
+    searchResults.innerHTML = `<div class="p-2 text-muted small">No results</div>`;
+  } else {
+    searchResults.innerHTML = matches
+      .map(
+        (page) =>
+          `<div class="search-result-item p-2" data-target="${page.target}">${page.name}</div>`,
+      )
+      .join("");
+  }
+
+  searchResults.style.display = "block";
+});
+
+searchResults.addEventListener("click", (e) => {
+  const item = e.target.closest(".search-result-item");
+  if (!item) return;
+
+  const targetId = item.getAttribute("data-target");
+  document.querySelectorAll(".content-box").forEach((page) => {
+    page.classList.toggle("d-none", page.id !== targetId);
+  });
+
+  searchInput.value = "";
+  searchResults.style.display = "none";
+});
+
+document.addEventListener("click", (e) => {
+  if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
+    searchResults.style.display = "none";
+  }
+});

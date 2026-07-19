@@ -1,277 +1,220 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
-      crossorigin="anonymous"
-    />
-    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <title>E-COMMERCE DASHBOARD</title>
-  </head>
-  <body>
-    <!-- Main Paper Dashboard Wrapper -->
-    <div
-      class="d-flex"
-      id="wrapper"
-      style="
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
+  <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <title>E-COMMERCE DASHBOARD</title>
+</head>
+
+<body>
+  <!-- Main Paper Dashboard Wrapper -->
+  <div class="d-flex" id="wrapper" style="
         background-color: #f4f3ef;
         min-height: 100vh;
         font-family: &quot;Montserrat&quot;, sans-serif;
-      "
-    >
-      <!-- SIDEBAR (Paper Dark Soft Grey) -->
-      <div id="sidebar-wrapper" class="bg-dark text-white" style="width: 260px; min-height: 100vh; transition: all 0.3s ease;">
-        <!-- Logo Section -->
-        <div
-          class="sidebar-heading text-center py-4 fs-6 fw-bold border-bottom border-secondary text-black-50"
-          style="letter-spacing: 1px"
-        >
-          <i class="fab fa-angular me-2 text-danger fs-5"></i><span class="text-white">CREATOR HASNAIN</span>
-        </div>
+      ">
+    <!-- SIDEBAR (Paper Dark Soft Grey) -->
+    <div id="sidebar-wrapper" class="bg-dark text-white"
+      style="width: 260px; min-height: 100vh; transition: all 0.3s ease;">
+      <!-- Logo Section -->
+      <div class="sidebar-heading text-center py-4 fs-6 fw-bold border-bottom border-secondary text-black-50"
+        style="letter-spacing: 1px">
+        <i class="fab fa-angular me-2 text-danger fs-5"></i><span class="text-white">CREATOR HASNAIN</span>
+      </div>
 
-        <!-- User Profile Minimal Info -->
-        <div
-          class="px-3 py-3 border-bottom border-secondary d-flex align-items-center"
-        >
-          <div
-            class="bg-secondary rounded-circle text-center d-flex align-items-center justify-content-center me-3"
-            style="width: 40px; height: 40px"
-          >
-            <i class="fas fa-user text-white"></i>
-          </div>
-          <div>
-            <span class="fs-6 fw-medium text-white-100 d-block">SHAHZAIB</span>
-          </div>
+      <!-- User Profile Minimal Info -->
+      <div class="px-3 py-3 border-bottom border-secondary d-flex align-items-center">
+        <div class="bg-secondary rounded-circle text-center d-flex align-items-center justify-content-center me-3"
+          style="width: 40px; height: 40px">
+          <i class="fas fa-user text-white"></i>
         </div>
-
-        <!-- Navigation Links -->
-        <div class="list-group list-group-flush px-3 my-3">
-          <a
-            href="#"
-            class="list-group-item list-group-item-action bg-transparent text-danger py-3 mb-1 fw-bold border-0"
-            data-target="dashboard-page"
-            style="font-size: 0.85rem; letter-spacing: 1px"
-          >
-            <i class="fas fa-layer-group me-3 fs-5"></i> DASHBOARD
-          </a>
-          <a
-            href="#"
-            class="list-group-item list-group-item-action bg-transparent text-white-50 py-3 mb-1 fw-bold border-0 btn-paper-sidebar"
-            data-target="components-page"
-            style="font-size: 0.85rem; letter-spacing: 1px"
-          >
-            <i class="fas fa-cube me-3 fs-5"></i> COMPONENTS
-            <i class="fas fa-caret-down float-end mt-1 small"></i>
-          </a>
-          <a
-            href="#"
-            class="list-group-item list-group-item-action bg-transparent text-white-50 py-3 mb-1 fw-bold border-0 btn-paper-sidebar"
-            data-target="forms-page"
-            style="font-size: 0.85rem; letter-spacing: 1px"
-          >
-            <i class="fas fa-wand-magic-stroke me-3 fs-5"></i> FORMS
-          </a>
-          <a
-            href="#"
-            class="list-group-item list-group-item-action bg-transparent text-white-50 py-3 mb-1 fw-bold border-0 btn-paper-sidebar"
-            data-target="tables-page"
-            style="font-size: 0.85rem; letter-spacing: 1px"
-          >
-            <i class="fas fa-table-list me-3 fs-5"></i> TABLES
-          </a>
-          <a
-            href="#"
-            class="list-group-item list-group-item-action bg-transparent text-white-50 py-3 mb-1 fw-bold border-0 btn-paper-sidebar"
-            data-target="maps-page"
-            style="font-size: 0.85rem; letter-spacing: 1px"
-          >
-            <i class="fas fa-map me-3 fs-5"></i> MAPS
-          </a>
-          <a
-            href="#"
-            class="list-group-item list-group-item-action bg-transparent text-white-50 py-3 mb-1 fw-bold border-0 btn-paper-sidebar"
-            data-target="widgets-page"
-            style="font-size: 0.85rem; letter-spacing: 1px"
-          >
-            <i class="fas fa-chart-bar me-3 fs-5"></i> WIDGETS
-          </a>
-          <a
-            href="#"
-            class="list-group-item list-group-item-action bg-transparent text-white-50 py-3 mb-1 fw-bold border-0 btn-paper-sidebar"
-            data-target="charts-page"
-            style="font-size: 0.85rem; letter-spacing: 1px"
-          >
-            <i class="fas fa-chart-line me-3 fs-5"></i> CHARTS
-          </a>
+        <div>
+          <span class="fs-6 fw-medium text-white-100 d-block">SHAHZAIB</span>
         </div>
       </div>
 
-      <!-- PAGE CONTENT WRAPPER -->
-      <div id="page-content-wrapper" class="w-100" style="overflow-x: hidden;">
-        <!-- TOP NAVBAR (Transparent & Minimal) -->
-        <nav
-          class="navbar navbar-expand-lg navbar-light bg-transparent py-3 mb-4"
-        >
-          <div class="container-fluid px-3 pt-2">
-            <div class="d-flex align-items-center">
-              <i
-                class="fas fa-align-left text-secondary fs-5 me-3"
-                id="menu-toggle"
-                style="cursor: pointer"
-              ></i>
-              <h2
-                class="fs-4 m-0 fw-bold text-dark"
-              >
-                Dashboard
-              </h2>
-            </div>
+      <!-- Navigation Links -->
+      <div class="list-group list-group-flush px-3 my-3">
+        <a href="#" class="list-group-item list-group-item-action bg-transparent text-danger py-3 mb-1 fw-bold border-0"
+          data-target="dashboard-page" style="font-size: 0.85rem; letter-spacing: 1px">
+          <i class="fas fa-layer-group me-3 fs-5"></i> DASHBOARD
+        </a>
+        <a href="#"
+          class="list-group-item list-group-item-action bg-transparent text-white-50 py-3 mb-1 fw-bold border-0 btn-paper-sidebar"
+          data-target="components-page" style="font-size: 0.85rem; letter-spacing: 1px">
+          <i class="fas fa-cube me-3 fs-5"></i> COMPONENTS
+          <i class="fas fa-caret-down float-end mt-1 small"></i>
+        </a>
+        <a href="#"
+          class="list-group-item list-group-item-action bg-transparent text-white-50 py-3 mb-1 fw-bold border-0 btn-paper-sidebar"
+          data-target="forms-page" style="font-size: 0.85rem; letter-spacing: 1px">
+          <i class="fas fa-wand-magic-stroke me-3 fs-5"></i> FORMS
+        </a>
+        <a href="#"
+          class="list-group-item list-group-item-action bg-transparent text-white-50 py-3 mb-1 fw-bold border-0 btn-paper-sidebar"
+          data-target="tables-page" style="font-size: 0.85rem; letter-spacing: 1px">
+          <i class="fas fa-table-list me-3 fs-5"></i> TABLES
+        </a>
+        <a href="#"
+          class="list-group-item list-group-item-action bg-transparent text-white-50 py-3 mb-1 fw-bold border-0 btn-paper-sidebar"
+          data-target="maps-page" style="font-size: 0.85rem; letter-spacing: 1px">
+          <i class="fas fa-map me-3 fs-5"></i> MAPS
+        </a>
+        <a href="#"
+          class="list-group-item list-group-item-action bg-transparent text-white-50 py-3 mb-1 fw-bold border-0 btn-paper-sidebar"
+          data-target="widgets-page" style="font-size: 0.85rem; letter-spacing: 1px">
+          <i class="fas fa-chart-bar me-3 fs-5"></i> WIDGETS
+        </a>
+        <a href="#"
+          class="list-group-item list-group-item-action bg-transparent text-white-50 py-3 mb-1 fw-bold border-0 btn-paper-sidebar"
+          data-target="charts-page" style="font-size: 0.85rem; letter-spacing: 1px">
+          <i class="fas fa-chart-line me-3 fs-5"></i> CHARTS
+        </a>
+      </div>
+    </div>
 
-            <!-- Navbar Right Section -->
-            <div
-              class="d-flex align-items-center bg-white rounded-pill shadow-sm mx-auto px-3 py-1" style="width: 250px !important; margin-left:10px !important; margin-top:10px !important; margin-bottom:15px !important;">
-              <!-- style="max-width: 300px" -->
-            
-              <input
-                type="text"
-                class="form-control border-0 bg-transparent p-0 shadow-none small"
-                placeholder="Search..."
-              />
-              <span class="text-secondary ms-2" style="cursor: pointer"
-                ><i class="fas fa-magnifying-glass"></i
-              ></span>
+    <!-- PAGE CONTENT WRAPPER -->
+    <div id="page-content-wrapper" class="w-100" style="overflow-x: hidden;">
+      <!-- TOP NAVBAR (Transparent & Minimal) -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-3 mb-4">
+        <div class="container-fluid px-3 pt-2">
+          <div class="d-flex align-items-center">
+            <i class="fas fa-align-left text-secondary fs-5 me-3" id="menu-toggle" style="cursor: pointer"></i>
+            <h2 class="fs-4 m-0 fw-bold text-dark">
+              Dashboard
+            </h2>
+          </div>
+
+          <!-- Navbar Right Section -->
+          <div class="d-flex align-items-center bg-white rounded-pill shadow-sm mx-auto px-3 py-1"
+            style="width: 250px !important; margin-left:10px !important; margin-top:10px !important; margin-bottom:15px !important; position: relative;">
+            <!-- style="max-width: 300px" -->
+
+            <input type="text" class="form-control border-0 bg-transparent p-0 shadow-none small"
+              placeholder="Search..." />
+            <span class="text-secondary ms-2" style="cursor: pointer">
+              <i class="fas fa-magnifying-glass"></i>
+            </span>
+            <div id="search-results" class="position-absolute bg-white shadow-sm rounded"
+              style="display:none; z-index: 1000; min-width: 200px;"></div>
+          </div>
+      </nav>
+      <div id="dashboard-page" class="content-box px-3">
+        <div class="row g-3 mb-4">
+          <div class="col-md-12 col-md-6 col-lg-3">
+            <div class="card p-3 shadow-sm border-0 text-black" style="background-color: #add6f1">
+              <div class="card-body">
+                <h5 class="card-title text-muted opacity-75 fs-6">
+                  Total Sales
+                </h5>
+                <div class="d-flex justify-content-between align-items-center mt-2">
+                  <h2 class="card-text fw-bold mb-0">$12,345</h2>
+                  <i class="fas fa-dollar-sign"></i>
+                </div>
+              </div>
             </div>
           </div>
-        </nav>
-        <div id="dashboard-page" class="content-box px-3">
-          <div class="row g-3 mb-4">
-            <div class="col-md-12 col-md-6 col-lg-3">
-              <div
-                class="card p-3 shadow-sm border-0 text-black"
-                style="background-color: #add6f1"
-              >
-                <div class="card-body">
-                  <h5 class="card-title text-muted opacity-75 fs-6">
-                    Total Sales
-                  </h5>
-                  <div
-                    class="d-flex justify-content-between align-items-center mt-2"
-                  >
-                    <h2 class="card-text fw-bold mb-0">$12,345</h2>
-                    <i class="fas fa-dollar-sign"></i>
-                  </div>
+          <div class="col-md-12 col-md-6 col-lg-3">
+            <div class="card p-3 shadow-sm border-0">
+              <div class="card-body">
+                <h5 class="card-title text-muted fs-6">Total Users</h5>
+                <div class="d-flex justify-content-between align-items-center mt-2">
+                  <h2 class="card-text fw-bold mb-0">1,234</h2>
+                  <i class="fas fa-users fs-3 text-warning"></i>
                 </div>
               </div>
             </div>
-            <div class="col-md-12 col-md-6 col-lg-3">
-              <div class="card p-3 shadow-sm border-0">
-                <div class="card-body">
-                  <h5 class="card-title text-muted fs-6">Total Users</h5>
-                  <div
-                    class="d-flex justify-content-between align-items-center mt-2"
-                  >
-                    <h2 class="card-text fw-bold mb-0">1,234</h2>
-                    <i class="fas fa-users fs-3 text-warning"></i>
-                  </div>
+          </div>
+          <div class="col-md-12 col-md-6 col-lg-3">
+            <div class="card p-3 shadow-sm border-0">
+              <div class="card-body">
+                <h5 class="card-title text-muted fs-6">Total Orders</h5>
+                <div class="d-flex justify-content-between align-items-center mt-2">
+                  <h2 class="card-text fw-bold mb-0">567</h2>
+                  <i class="fas fa-shopping-cart fs-3 text-primary"></i>
                 </div>
               </div>
             </div>
-            <div class="col-md-12 col-md-6 col-lg-3">
-              <div class="card p-3 shadow-sm border-0">
-                <div class="card-body">
-                  <h5 class="card-title text-muted fs-6">Total Orders</h5>
-                  <div
-                    class="d-flex justify-content-between align-items-center mt-2"
-                  >
-                    <h2 class="card-text fw-bold mb-0">567</h2>
-                    <i class="fas fa-shopping-cart fs-3 text-primary"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-12 col-md-6 col-lg-3">
-              <div class="card p-3 shadow-sm border-0">
-                <div class="card-body">
-                  <h5 class="card-title text-muted fs-6">Total Profit</h5>
-                  <div
-                    class="d-flex justify-content-between align-items-center mt-2"
-                  >
-                    <h2 class="card-text fw-bold mb-0">$5,887</h2>
-                    <i class="fas fa-chart-line fs-3 text-danger"></i>
-                  </div>
+          </div>
+          <div class="col-md-12 col-md-6 col-lg-3">
+            <div class="card p-3 shadow-sm border-0">
+              <div class="card-body">
+                <h5 class="card-title text-muted fs-6">Total Profit</h5>
+                <div class="d-flex justify-content-between align-items-center mt-2">
+                  <h2 class="card-text fw-bold mb-0">$5,887</h2>
+                  <i class="fas fa-chart-line fs-3 text-danger"></i>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="row mt-4">
-          <div class="col-md-8 mb-4">
-            <div class="card shadow-sm border-0 h-100">
-              <div class="card-body">
-                <div class="d-flex justify-content-between align-items-center mb-3">
+      </div>
+      <div class="row mt-4">
+        <div class="col-md-8 mb-4">
+          <div class="card shadow-sm border-0 h-100">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center mb-3">
                 <h5 class="card-title fw-bold mb-0">Sales Overview</h5>
                 <p class="text-muted small mb-0">Real-Time Sales Performance</p>
-                </div>
-                <div class="btn-group" role="group">
-                  <button type="button" class="btn btn-sm btn-outline-primary active" id="btn-weekly">Weekly</button>
-                  <button type="button" class="btn btn-sm btn-outline-primary" id="btn-monthly">Monthly</button>
-                  <button type="button" class="btn btn-sm btn-outline-primary" id="btn-yearly">Yearly</button>
-                </div>
+              </div>
+              <div class="btn-group" role="group">
+                <button type="button" class="btn btn-sm btn-outline-primary active" id="btn-weekly">Weekly</button>
+                <button type="button" class="btn btn-sm btn-outline-primary" id="btn-monthly">Monthly</button>
+                <button type="button" class="btn btn-sm btn-outline-primary" id="btn-yearly">Yearly</button>
+              </div>
 
-                <div id="MainSalesChart" style="min-height: 300px"></div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 mb-4">
-            <div class="card shadow-sm border-0 h-100">
-              <div class="card-body">
-                <h5 class="card-title fw-bold">Traffic Source</h5>
-                <p class="text-muted small">Where Your Users Come From</p>
-                <div id="TrafficDonutChart" style="min-height: 300px"></div>
-              </div>
+              <div id="MainSalesChart" style="min-height: 300px"></div>
             </div>
           </div>
         </div>
-        <div id="tables-page" class="content-box px-3 d-none">
-          <h2 class="text-dark">tables data screen</h2>
+        <div class="col-md-4 mb-4">
+          <div class="card shadow-sm border-0 h-100">
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Traffic Source</h5>
+              <p class="text-muted small">Where Your Users Come From</p>
+              <div id="TrafficDonutChart" style="min-height: 300px"></div>
+            </div>
+          </div>
         </div>
-        <div id="components-page" class="content-box px-3 d-none">
-          <h2 class="text-dark">components data screen</h2>
-          <p>lagta hu wait</p>
-        </div>
-        <div id="forms-page" class="content-box px-3 d-none">
-          <h2 class="text-dark">forms data screen</h2>
-          <p>lagta hu wait</p>
-        </div>
-        <div id="maps-page" class="content-box px-3 d-none">
-          <h2 class="text-dark">maps data screen</h2>
-          <p>lagta hu wait</p>
-        </div>
-        <div id="widgets-page" class="content-box px-3 d-none">
-          <h2 class="text-dark">widgets data screen</h2>
-          <p>lagta hu wait</p>
-        </div>
-        <div id="charts-page" class="content-box px-3 d-none">
-          <h2 class="text-dark">charts data screen</h2>
-          <p>lagta hu wait</p>
-        </div>
-        
+      </div>
+      <div id="tables-page" class="content-box px-3 d-none">
+        <h2 class="text-dark">tables data screen</h2>
+      </div>
+      <div id="components-page" class="content-box px-3 d-none">
+        <h2 class="text-dark">components data screen</h2>
+        <p>lagta hu wait</p>
+      </div>
+      <div id="forms-page" class="content-box px-3 d-none">
+        <h2 class="text-dark">forms data screen</h2>
+        <p>lagta hu wait</p>
+      </div>
+      <div id="maps-page" class="content-box px-3 d-none">
+        <h2 class="text-dark">maps data screen</h2>
+        <p>lagta hu wait</p>
+      </div>
+      <div id="widgets-page" class="content-box px-3 d-none">
+        <h2 class="text-dark">widgets data screen</h2>
+        <p>lagta hu wait</p>
+      </div>
+      <div id="charts-page" class="content-box px-3 d-none">
+        <h2 class="text-dark">charts data screen</h2>
+        <p>lagta hu wait</p>
+      </div>
 
 
-    <button id="dark-mode-toggle" class="btn btn-danger shadow-lg" style="position: fixed; bottom: 30px; right: 30px; z-index: 999999 !important; padding: 15px 25px; border-radius: 50px; font-weight: bold; color: white;">
-        🌙 Dark Mode 
-    </button>
 
-    <script src="script.js" defer></script>
+      <button id="dark-mode-toggle" class="btn btn-danger shadow-lg"
+        style="position: fixed; bottom: 30px; right: 30px; z-index: 999999 !important; padding: 15px 25px; border-radius: 50px; font-weight: bold; color: white;">
+        🌙 Dark Mode
+      </button>
+
+      <script src="script.js" defer></script>
 </body>
+
 </html>
-      
-    
