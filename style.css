@@ -184,6 +184,11 @@ body.dark #page-content-wrapper .bg-white.rounded-pill {
 body.dark #page-content-wrapper .bg-white.rounded-pill input {
   background-color: transparent !important;
   color: #ffffff !important;
+  border: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+  -webkit-appearance: none !important;
+  appearance: none !important;
 }
 body.dark #page-content-wrapper .bg-white.rounded-pill input::placeholder {
   color: #aaaaaa !important;
@@ -202,4 +207,12 @@ body.dark .rounded-pill.shadow-sm {
   box-shadow: none !important;
   border: none !important;
   background-color: #222222 !important;
+}
+body.dark #page-content-wrapper .bg-white.rounded-pill input:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+body.dark #dashboard-page .card[style*="background-color"] {
+  background-color: #f14d63 !important;
+  color: #000000 !important;
 }
