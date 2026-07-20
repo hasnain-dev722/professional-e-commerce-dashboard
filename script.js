@@ -227,7 +227,14 @@ searchInput.addEventListener("input", () => {
     searchResults.style.display = "none";
     return;
   }
-
+  searchInput.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+      const firstMatch = document.querySelector(".search-result-item");
+      if (firstMatch) {
+        firstMatch.click();
+      }
+    }
+  });
   const matches = pages.filter((page) =>
     page.name.toLowerCase().includes(query),
   );
