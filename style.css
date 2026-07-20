@@ -216,3 +216,27 @@ body.dark #dashboard-page .card[style*="background-color"] {
   background-color: #f14d63 !important;
   color: #000000 !important;
 }
+#search-results {
+  background-color: #ffffff;
+}
+
+.search-result-item {
+  color: #000000;
+  cursor: pointer;
+}
+
+.search-result-item:hover {
+  background-color: #f0f0f0;
+}
+
+body.dark #search-results {
+  background-color: #1e1e1e;
+}
+
+body.dark .search-result-item {
+  color: #ffffff;
+}
+
+body.dark .search-result-item:hover {
+  background-color: #2a2a2a;
+}
