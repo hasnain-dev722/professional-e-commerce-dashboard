@@ -232,6 +232,7 @@ searchInput.addEventListener("input", () => {
   const matches = pages.filter((page) =>
     page.name.toLowerCase().includes(query),
   );
+  console.log("matches found:", matches);
 
   if (matches.length === 0) {
     searchResults.innerHTML = `<div class="p-2 text-muted small">No results</div>`;
