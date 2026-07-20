@@ -221,6 +221,7 @@ const pages = [
 ];
 
 searchInput.addEventListener("input", () => {
+  console.log("typing detected:", searchInput.value);
   const query = searchInput.value.trim().toLowerCase();
 
   if (query === "") {
