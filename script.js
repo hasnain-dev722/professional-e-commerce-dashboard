@@ -244,7 +244,7 @@ searchInput.addEventListener("input", () => {
       )
       .join("");
   }
-
+  console.log("HTML set to:", searchResults.innerHTML);
   searchResults.style.display = "block";
 });
 
