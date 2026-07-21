@@ -213,7 +213,7 @@ body.dark #page-content-wrapper .bg-white.rounded-pill input:focus {
   box-shadow: none !important;
 }
 body.dark #dashboard-page .card[style*="background-color"] {
-  background-color: #f14d63 !important;
+  background-color: #a68ffa !important;
   color: #000000 !important;
 }
 #search-results {
