@@ -270,3 +270,8 @@ document.addEventListener("click", (e) => {
     searchResults.style.display = "none";
   }
 });
+document.querySelector('[data-target="components-page"]').addEventListener("click", function(e) {
+e.preventDefault();
+document.getElementById("components-submenu").classList.toggle("d-none");
+this.querySelector()
+})
