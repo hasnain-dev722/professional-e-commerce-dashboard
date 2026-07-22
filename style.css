@@ -250,10 +250,10 @@ body.dark #search-results {
 .rotate-180 {
   transform: rotate(0deg);
 }
-#components-submenu{
-  padding-left:2.5rem;
+#components-submenu {
+  padding-left: 2.5rem;
 }
-#components-submenu a{
+#components-submenu a {
   display: block;
   color: rgba(255, 255, 255, 0.7);
   text-decoration: none;
@@ -261,4 +261,28 @@ body.dark #search-results {
   font-size: 0.8rem;
   letter-spacing: 0.5px;
 }
-#components-submenu a
+#components-submenu a:hover {
+  color: #fff;
+}
+/* .submenu-link {
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  border: none;
+  color: rgba(255, 255, 255, 0.75);
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+.submenu-link:hover {
+  background-color: #ff4d4d;
+  color: #fff;
+} */
+#components-submenu {
+  margin: 0;
+  padding: 0;
+}
+#components-submenu .list-group-item {
+  width: 100%;
+  margin: 0;
+  box-sizing: border-box;
+}
