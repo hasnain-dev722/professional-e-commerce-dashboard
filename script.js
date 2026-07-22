@@ -273,5 +273,5 @@ document.addEventListener("click", (e) => {
 document.querySelector('[data-target="components-page"]').addEventListener("click", function(e) {
 e.preventDefault();
 document.getElementById("components-submenu").classList.toggle("d-none");
-this.querySelector()
+this.querySelector('.fa-cart-down').classList.toggle('rotate-180');
 })

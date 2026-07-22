@@ -243,3 +243,9 @@ body.dark .search-result-item:hover {
 body.dark #search-results {
   background-color: #1e1e1e !important;
 }
+.fa-caret-down {
+  transition: transform 0.2 ease;
+}
+.rotate-180 {
+  transform: rotate(180deg);
+}
