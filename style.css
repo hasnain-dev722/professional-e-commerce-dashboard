@@ -245,7 +245,11 @@ body.dark #search-results {
 }
 .fa-caret-down {
   transition: transform 0.2 ease;
+  transform: rotate(-90deg);
 }
 .rotate-180 {
-  transform: rotate(180deg);
+  transform: rotate(0deg);
+}
+#components-submenu{
+  padding-left:2.5rem;
 }
