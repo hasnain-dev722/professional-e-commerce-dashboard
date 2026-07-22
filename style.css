@@ -253,3 +253,12 @@ body.dark #search-results {
 #components-submenu{
   padding-left:2.5rem;
 }
+#components-submenu a{
+  display: block;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  padding: 0.5rem 0;
+  font-size: 0.8rem;
+  letter-spacing: 0.5px;
+}
+#components-submenu a
