@@ -277,3 +277,112 @@ document
     document.getElementById("components-submenu").classList.toggle("d-none");
     this.querySelector(".fa-caret-down").classList.toggle("rotate-180");
   });
+class ProductTable {
+  constructor(data, tbodyId, paginationId) {
+    this.data = data;
+    this.filteredData = [...data];
+    this.currentPage = 1;
+    this.perPage = 5;
+    this.tbody = document.getElementById(tbodyId);
+    this.pagination = document.getElementById(paginationId);
+    this.render();
+  }
+
+  render() {
+    const start = (this.currentPage - 1) * this.perPage;
+    const pageItems = this.filteredData.slice(start, start + this.perPage);
+
+    this.tbody.innerHTML = pageItems
+      .map(
+        (p) => `
+      <tr>
+        <td>${p.name}</td>
+        <td>${p.category}</td>
+        <td>$${p.price}</td>
+        <td>${p.stock}</td>
+        <td><span class="badge ${p.stock > 0 ? "bg-success" : "bg-danger"}">${p.stock > 0 ? "In Stock" : "Out of Stock"}</span></td>
+        <td><button class="btn btn-sm btn-outline-danger" onclick="productTable.deleteProduct(${p.id})">Delete</button></td>
+      </tr>
+    `,
+      )
+      .join("");
+
+    this.renderPagination();
+  }
+
+  renderPagination() {
+    const totalPages = Math.ceil(this.filteredData.length / this.perPage);
+    this.pagination.innerHTML = "";
+    for (let i = 1; i <= totalPages; i++) {
+      this.pagination.innerHTML += `<button class="btn btn-sm ${i === this.currentPage ? "btn-primary" : "btn-outline-light"}" onclick="productTable.goToPage(${i})">${i}</button>`;
+    }
+  }
+
+  goToPage(page) {
+    this.currentPage = page;
+    this.render();
+  }
+
+  search(query) {
+    query = query.toLowerCase();
+    this.filteredData = this.data.filter(
+      (p) =>
+        p.name.toLowerCase().includes(query) ||
+        p.category.toLowerCase().includes(query),
+    );
+    this.currentPage = 1;
+    this.render();
+  }
+
+  sortBy(column) {
+    this.sortAsc = this.sortColumn === column ? !this.sortAsc : true;
+    this.sortColumn = column;
+    this.filteredData.sort((a, b) => {
+      if (a[column] < b[column]) return this.sortAsc ? -1 : 1;
+      if (a[column] > b[column]) return this.sortAsc ? 1 : -1;
+      return 0;
+    });
+    this.render();
+  }
+
+  deleteProduct(id) {
+    this.data = this.data.filter((p) => p.id !== id);
+    this.filteredData = this.filteredData.filter((p) => p.id !== id);
+    this.render();
+  }
+}
+
+const sampleProducts = [
+  {
+    id: 1,
+    name: "Wireless Mouse",
+    category: "Electronics",
+    price: 25,
+    stock: 40,
+  },
+  { id: 2, name: "Office Chair", category: "Furniture", price: 120, stock: 0 },
+  { id: 3, name: "Notebook", category: "Stationery", price: 3, stock: 200 },
+  {
+    id: 4,
+    name: "Bluetooth Speaker",
+    category: "Electronics",
+    price: 45,
+    stock: 15,
+  },
+  { id: 5, name: "Desk Lamp", category: "Furniture", price: 30, stock: 8 },
+  { id: 6, name: "Pen Set", category: "Stationery", price: 5, stock: 0 },
+];
+
+const productTable = new ProductTable(
+  sampleProducts,
+  "productTableBody",
+  "paginationControls",
+);
+
+document.querySelectorAll("[data-sort]").forEach((th) => {
+  th.addEventListener("click", () => productTable.sortBy(th.dataset.sort));
+});
+
+document.getElementById("productSearch").addEventListener("input", (e) => {
+  productTable.search(e.target.value);
+});

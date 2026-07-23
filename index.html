@@ -186,7 +186,25 @@
         </div>
       </div>
       <div id="tables-page" class="content-box px-3 d-none">
-        <h2 class="text-dark">tables data screen</h2>
+        <h2 class="text-dark">Products</h2>
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <input type="text" id="productSearch" class="form-control w-25" placeholder="Search products...">
+          <button id="addProductBtn" class="btn btn-primary btn-sm">+ Add Product</button>
+        </div>
+        <table class="table table-dark table-hover">
+          <thead>
+            <tr>
+              <th data-sort="name" style="cursor:pointer">Name</th>
+              <th data-sort="category" style="cursor:pointer">Category</th>
+              <th data-sort="price" style="cursor:pointer">Price</th>
+              <th>Stock</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="productTableBody"></tbody>
+        </table>
+        <div id="paginationControls" class="d-flex justify-content-center gap-2"></div>
       </div>
       <div id="components-page" class="content-box px-3 d-none">
         <h2 class="text-dark">components data screen</h2>
