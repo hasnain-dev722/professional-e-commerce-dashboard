@@ -264,19 +264,7 @@ body.dark #search-results {
 #components-submenu a:hover {
   color: #fff;
 }
-/* .submenu-link {
-  font-size: 0.85rem;
-  letter-spacing: 0.5px;
-  border: none;
-  color: rgba(255, 255, 255, 0.75);
-  transition:
-    background 0.2s ease,
-    color 0.2s ease;
-}
-.submenu-link:hover {
-  background-color: #ff4d4d;
-  color: #fff;
-} */
+
 #components-submenu {
   margin: 0;
   padding: 0;
@@ -285,4 +273,19 @@ body.dark #search-results {
   width: 100%;
   margin: 0;
   box-sizing: border-box;
+}
+#components-submenu .list-group-item.submenu-link {
+  padding-left: 3rem !important;
+}
+#components-submenu .list-group-item.submenu-link {
+  padding: 0.75rem 1.25rem 0.75rem 3rem !important;
+  display: flex;
+  align-items: center;
+}
+#components-submenu .list-group-item.submenu-link i {
+  font-size: 1rem;
+  width: 1.25rem;
+}
+#components-submenu a {
+  padding-left: 1.5rem !important;
 }
