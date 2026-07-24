@@ -271,7 +271,7 @@ document.addEventListener("click", (e) => {
   }
 });
 document
-  .querySelector('[data-target="components-page"]')
+  .getElementById("components-toggle")
   .addEventListener("click", function (e) {
     e.preventDefault();
     document.getElementById("components-submenu").classList.toggle("d-none");
