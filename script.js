@@ -351,6 +351,12 @@ class ProductTable {
     this.filteredData = this.filteredData.filter((p) => p.id !== id);
     this.render();
   }
+  addProduct(product) {
+    product.id = Date.now();
+    this.data.push(product);
+    this.filteredData = [...this.data];
+    this.render();
+  }
 }
 
 const sampleProducts = [
