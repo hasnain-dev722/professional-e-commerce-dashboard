@@ -8,6 +8,7 @@ sidebarlinks.forEach((link) => {
     });
     this.classList.add("active");
     const targetname = this.getAttribute("data-target");
+    if (!targetname) return;
     allpages.forEach((page) => {
       if (page.id === targetname) {
         page.classList.remove("d-none");
