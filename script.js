@@ -387,3 +387,31 @@ document.querySelectorAll("[data-sort]").forEach((th) => {
 document.getElementById("productSearch").addEventListener("input", (e) => {
   productTable.search(e.target.value);
 });
+const addProductModal = new bootstrap.Modal(
+  document.getElementById("addProductModal"),
+);
+
+document.getElementById("addProductBtn").addEventListener("click", () => {
+  addProductModal.show();
+});
+
+document.getElementById("saveProductBtn").addEventListener("click", () => {
+  const name = document.getElementById("newProductName").value.trim();
+  const category = document.getElementById("newProductCategory").value.trim();
+  const price = parseFloat(document.getElementById("newProductPrice").value);
+  const stock = parseInt(document.getElementById("newProductStock").value);
+
+  if (!name || !category || isNaN(price) || isNaN(stock)) {
+    alert("Sab fields sahi se bharo");
+    return;
+  }
+
+  productTable.addProduct({ name, category, price, stock });
+
+  document.getElementById("newProductName").value = "";
+  document.getElementById("newProductCategory").value = "";
+  document.getElementById("newProductPrice").value = "";
+  document.getElementById("newProductStock").value = "";
+
+  addProductModal.hide();
+});
