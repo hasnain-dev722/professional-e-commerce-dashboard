@@ -280,6 +280,7 @@ document
   });
 class ProductTable {
   constructor(data, tbodyId, paginationId) {
+    const saved = localStorage.getItem("products");
     this.data = data;
     this.filteredData = [...data];
     this.currentPage = 1;
@@ -355,6 +356,7 @@ class ProductTable {
     product.id = Date.now();
     this.data.push(product);
     this.filteredData = [...this.data];
+    localStorage.setItem("products", JSON.stringify(this.data));
     this.render();
   }
 }
@@ -400,7 +402,13 @@ const addProductModal = new bootstrap.Modal(
 document.getElementById("addProductBtn").addEventListener("click", () => {
   addProductModal.show();
 });
-
+document.querySelectorAll("#addProductModal input").forEach((input) => {
+  input.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+      document.getElementById("saveProductBtn").click();
+    }
+  });
+});
 document.getElementById("saveProductBtn").addEventListener("click", () => {
   const name = document.getElementById("newProductName").value.trim();
   const category = document.getElementById("newProductCategory").value.trim();
