@@ -281,7 +281,7 @@ document
 class ProductTable {
   constructor(data, tbodyId, paginationId) {
     const saved = localStorage.getItem("products");
-    this.data = data;
+    this.data = saved ? JSON.parse(saved) : data;
     this.filteredData = [...data];
     this.currentPage = 1;
     this.perPage = 5;
