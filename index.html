@@ -189,24 +189,26 @@
       <div id="tables-page" class="content-box px-3 d-none">
         <h2 class="text-dark">Products</h2>
         <!-- <div class="d-flex justify-content-between align-items-center mb-3"> -->
-          <div class="d-flex flex-wrap gap-2 justify-content-between align-items-center mb-3">
-          <input type="text" id="productSearch" class="form-control w-25" placeholder="Search products...">
+        <div class="d-flex flex-wrap gap-2 justify-content-between align-items-center mb-3">
+          <!-- <input type="text" id="productSearch" class="form-control w-25" placeholder="Search products..."> -->
+          <input type="text" id="productSearch" class="form-control" style="min-width: 200px; flex: 1;"
+            placeholder="Search products...">
           <button id="addProductBtn" class="btn btn-primary btn-sm">+ Add Product</button>
         </div>
         <div style="overflow: auto;">
-        <table class="table table-dark table-hover">
-          <thead>
-            <tr>
-              <th data-sort="name" style="cursor:pointer">Name</th>
-              <th data-sort="category" style="cursor:pointer">Category</th>
-              <th data-sort="price" style="cursor:pointer">Price</th>
-              <th>Stock</th>
-              <th>Status</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody id="productTableBody"></tbody>
-        </table>
+          <table class="table table-dark table-hover">
+            <thead>
+              <tr>
+                <th data-sort="name" style="cursor:pointer">Name</th>
+                <th data-sort="category" style="cursor:pointer">Category</th>
+                <th data-sort="price" style="cursor:pointer">Price</th>
+                <th>Stock</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="productTableBody"></tbody>
+          </table>
         </div>
         <div class="modal fade" id="addProductModal" tabindex="-1">
           <div class="modal-dialog">
