@@ -430,8 +430,3 @@ document.getElementById("saveProductBtn").addEventListener("click", () => {
   addProductModal.hide();
 });
 
-// busy darkbody
-// not able to work
-// extreemly fool
-// tomorrow is planeed to lahore
-// very tough days
