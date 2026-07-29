@@ -434,3 +434,4 @@ document.getElementById("saveProductBtn").addEventListener("click", () => {
 // trying to understand this shit 150 lines code
 // also maybe we go today lahore
 // to much confuse and frustrated on this code
+// struggling but i will do it i know bout that
