@@ -431,3 +431,4 @@ document.getElementById("saveProductBtn").addEventListener("click", () => {
 });
 
 // today is also a busy day
+// trying to understand this shit 150 lines code
