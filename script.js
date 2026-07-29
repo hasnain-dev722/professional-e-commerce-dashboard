@@ -430,8 +430,3 @@ document.getElementById("saveProductBtn").addEventListener("click", () => {
   addProductModal.hide();
 });
 
-// today is also a busy day
-// trying to understand this shit 150 lines code
-// also maybe we go today lahore
-// to much confuse and frustrated on this code
-// struggling but i will do it i know bout that
