@@ -430,10 +430,3 @@ document.getElementById("saveProductBtn").addEventListener("click", () => {
   addProductModal.hide();
 });
 
-// tough life
-// was in lahore
-// was very lazy
-m
-w
-q
-3
