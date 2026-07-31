@@ -435,3 +435,4 @@ document.getElementById("saveProductBtn").addEventListener("click", () => {
 // was very lazy
 m
 w
+q
