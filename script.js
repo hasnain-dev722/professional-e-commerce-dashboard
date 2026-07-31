@@ -434,3 +434,4 @@ document.getElementById("saveProductBtn").addEventListener("click", () => {
 // was in lahore
 // was very lazy
 m
+w
