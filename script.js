@@ -432,3 +432,4 @@ document.getElementById("saveProductBtn").addEventListener("click", () => {
 
 1
 q
+w
