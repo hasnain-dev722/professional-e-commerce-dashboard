@@ -430,6 +430,4 @@ document.getElementById("saveProductBtn").addEventListener("click", () => {
   addProductModal.hide();
 });
 
-1
-q
-w
+
