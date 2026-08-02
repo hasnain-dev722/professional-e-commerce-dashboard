@@ -431,5 +431,3 @@ document.getElementById("saveProductBtn").addEventListener("click", () => {
 });
 
 
-wgit add
-q
