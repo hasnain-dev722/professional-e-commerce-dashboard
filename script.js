@@ -430,5 +430,3 @@ document.getElementById("saveProductBtn").addEventListener("click", () => {
   addProductModal.hide();
 });
 
-zxnznxn
-vmmvcmvc
